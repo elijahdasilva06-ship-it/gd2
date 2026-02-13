@@ -1,0 +1,25 @@
+/*h1 {
+    color: purple;
+    font-size: 80px;
+    font-weight:boldest;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-variant-caps:small-caps;
+}
+
+
+
+p{
+    color:magenta;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 800;
+}*/
+
+
+body{
+    font-size: 14px;
+}
+
+.q_and_a {
+    width: 500px;
+    margin: auto;
+}
