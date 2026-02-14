@@ -23,3 +23,16 @@ body{
     width: 500px;
     margin: auto;
 }
+
+.question {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: rgb(0, 59, 57);
+
+}
+
+.answer {
+    text-align: right;
+    color: rgb(72, 5, 34);
+}
+
+ .img
