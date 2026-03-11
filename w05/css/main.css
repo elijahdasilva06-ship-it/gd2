@@ -131,12 +131,25 @@ footer {
 
 }
 
+
+#menu.active {
+    display:block;
+}
+
 .menu-content {
     max-width:600px;
     margin:auto;
     padding:6em;
 }
 
+
+#preamble-btn-1 {
+    transition: transform 2s;
+}
+
+.rotate {
+    transform: rotate(405deg);
+}
 
 
 
