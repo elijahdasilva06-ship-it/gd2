@@ -7,3 +7,9 @@ img {
     grid-template-columns:repeat(5, 1fr);
     grid-column-gap:1em;
 }
+
+.filters {
+    text-align: center;
+    margin: 4rem;
+    
+}
