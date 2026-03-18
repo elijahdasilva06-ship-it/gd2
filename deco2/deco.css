@@ -1,11 +1,12 @@
 
  .crop-container {
   width: 100%; /* Desired width of the cropped area */
-  height: 800px; /* Desired height of the cropped area */
+  height: 100%; /* Desired height of the cropped area */
   overflow-x:scroll; /* Hides the parts outside the container */
   overflow-y: hidden;
   max-height: 1000px;
   position: relative; /* Needed for absolute positioning of the image, if used */
+  
 
 }
    
@@ -43,15 +44,17 @@
   height: 200%; /* Desired height of the cropped area */
   overflow-x:scroll; /* Hides the parts outside the container */
   overflow-y: hidden;
-  max-height: 100px;
+  max-height: 200px;
+  max-width: none;
+  min-width: 100%;
   position: absolute; /* Needed for absolute positioning of the image, if used */
-  margin-top: -2.4%;
+  margin-top: -2.6%;
 
 }
 
 .cardboard2 {
-    width: 200%;
-    height: 200%;
+    width: 120%;
+    height: 120%;
     position: sticky;
     /*transform: rotate(90deg);*/
     
@@ -143,8 +146,30 @@ button {
   
 }
 
+h1 {
+    position: static;
+}
+
+h3 { /*type of deco*/
+    y: static;
+    x: fixed;
+    text-align: center;
+    letter-spacing: 0.8rem;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 30pt;
+    text-transform: uppercase;
+}
+
+
+h2 {
+    font-family: Tahoma, Geneva, Verdana, 'Segoe UI',  sans-serif;
+    font-size: 22pt;
+
+}
+
+
 ol {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 12pt;
 
 }
@@ -156,10 +181,10 @@ ol {
 }
 */
 
-.sublist {
+ul {
     margin-left: 20px; /* Adjust the value as needed */
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-variant-caps: all-small-caps ;
+    font-variant-caps: all-small-caps;
 
 }
 
@@ -167,8 +192,22 @@ ol {
     width: 100%;
     height: 100%;
     position: absolute;
-    scale: 80%;
+    scale: 120%;
     z-index: 1;
+    top: 40%;
+    left: 20%;
+    rotate: 347deg;
+    
+
+}
+
+.deco-paper2 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    scale: 120%;
+    z-index: 2;
+    left: 65%
 
 }
 
@@ -176,6 +215,13 @@ ol {
   padding: 10px;
   cursor: move;
   z-index: 10;
+  background-color: transparent;
+  color: #fff;
+}
+#mydivheader2 {
+  padding: 10px;
+  cursor: move;
+  z-index: 11;
   background-color: transparent;
   color: #fff;
 }
@@ -218,4 +264,28 @@ body:not(.deco-home):not(.deco-p2):not(.deco-p3-1):not(.deco-p3-2)::before {
 
     opacity: 0.1; /* 👈 change this */
     z-index: -1;
+}
+
+
+/* p3, paper tole*/
+body:not(.deco-home):not(.deco-p2):not(.deco-p3-1):not(.deco-p3-2) {
+    position: relative;
+    background-color: rgb(242, 191, 242);
+}
+
+/* background layer */
+body:not(.deco-home):not(.deco-p2):not(.deco-p3-0):not(.deco-p3-2)::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background-image: url("/deco2/rosey wallpaper.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    opacity: 0.5; /* 👈 change this */
+    z-index: -1;
+    
 }
