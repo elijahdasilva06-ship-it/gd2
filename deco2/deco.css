@@ -511,7 +511,7 @@ body:not(.deco-home):not(.deco-p3-1):not(.deco-p3-0):not(.deco-p3-2):before {
     position: fixed;
     inset: 0;
 
-    background-image: url("/deco2/scantron\ sheet.jpg");
+    background-image: url("../deco2/scantron sheet.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -535,7 +535,7 @@ body:not(.deco-p2):not(.deco-p3-1):not(.deco-p3-0):not(.deco-p3-2)::before {
     position: fixed;
     inset: 0;
 
-    background-image: url("/deco2/col\ col.jpg");
+    background-image: url("../deco2/col col.jpg");
     background-size: 150%;
     background-position: center;
     background-repeat: no-repeat;
@@ -560,4 +560,5 @@ folders:
 
 
 around 500 kb pic??- test- should not take more than a few secs
+check console to see if it's loaded
 */
