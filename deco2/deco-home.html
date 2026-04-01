@@ -1,194 +1,121 @@
 <!DOCTYPE html>
-
-
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title></title>
-        <title></title>
-        <link rel="stylesheet" href="deco.css"/>
-        <nav>
-            <a href="deco-home.html"></a>
-            <a href="deco-p2.html"></a>
-            <a href="deco-p3-0.html"></a>
-            <a href="deco-p3-1.html"></a>
-            <a href="deco-p3-2.html"></a>
-        </nav>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decoupage</title>
 
-    </head>
+    <link rel="stylesheet" href="deco.css"/>
 
-<style>
-#mydiv {
-  position: absolute;
-  z-index: 1;
-  background-color: transparent;
-  text-align: center;
+    <!-- jQuery + jQuery UI -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
 
-}
+    <nav>
+        <a href="deco-home.html"></a>
+        <a href="deco-p2.html"></a>
+        <a href="deco-p3-0.html"></a>
+        <a href="deco-p3-1.html"></a>
+        <a href="deco-p3-2.html"></a>
+    </nav>
 
-#mydiv2 {
-  position: absolute;
-  z-index: 2;
-  background-color: transparent;
-  text-align: center;
+    <style>
+        .draggable {
+            position: absolute;
+            cursor: grab;
+            z-index: 5;
+        }
 
-}
+        .draggable:active {
+            cursor: grabbing;
+        }
+    </style>
+</head>
 
-#mydivheader {
-  padding: 10px;
-  cursor: move;
-  z-index: 1;
-  background-color: transparent;
-  color: transparent;
-}
-</style>
+<body class="deco-home">
 
+    <div class="title"></div>
 
-    <body class="deco-home">
-        <div class="title"></div>
-                <a href="deco-p2.html">Continue to Recipe Selection</a><br>
-                <div class="title">
-                     <h1>The Art of Decoupage</h1>
+    <a href="deco-p2.html">Continue to Recipe Selection</a><br>
 
-                    <p1>
-                    </p1>
-                </div>
-                </div>
-                 
+    <div class="title">
+        <h1>The Art of Decoupage</h1>
+    </div>
 
-   
-            <div class="crop-container">
-                <div class="deco-paper">
+    <button id="toggleBtn" onclick="toggleDraggables()">Hide Pieces</button>
 
-                               <div id="mydiv">
-                    <div id="mydivheader"><img src="deco paper 1.png"></div>
-                    </div>
+<!--HIDE DRAGGABLES-->        
+    <script>
+    let hidden = false;
 
-                    <script>
-                    //Make the DIV element draggagle:
-                    dragElement(document.getElementById("mydiv"));
+    function toggleDraggables() {
+    const items = document.querySelectorAll(".draggable");
+    const btn = document.getElementById("toggleBtn");
 
-                    function dragElement(elmnt) {
-                    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-                    if (document.getElementById(elmnt.id + "header")) {
-                        /* if present, the header is where you move the DIV from:*/
-                        document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
-                    } else {
-                        /* otherwise, move the DIV from anywhere inside the DIV:*/
-                        elmnt.onmousedown = dragMouseDown;
-                    }
+    hidden = !hidden;
 
-                    function dragMouseDown(e) {
-                        e = e || window.event;
-                        e.preventDefault();
-                        // get the mouse cursor position at startup:
-                        pos3 = e.clientX;
-                        pos4 = e.clientY;
-                        document.onmouseup = closeDragElement;
-                        // call a function whenever the cursor moves:
-                        document.onmousemove = elementDrag;
-                    }
+    items.forEach(el => {
+        el.style.display = hidden ? "none" : "block";
+    });
 
-                    function elementDrag(e) {
-                        e = e || window.event;
-                        e.preventDefault();
-                        // calculate the new cursor position:
-                        pos1 = pos3 - e.clientX;
-                        pos2 = pos4 - e.clientY;
-                        pos3 = e.clientX;
-                        pos4 = e.clientY;
-                        // set the element's new position:
-                        elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-                        elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-                    }
+    btn.textContent = hidden ? "Show Pieces" : "Hide Pieces";
+    }
+    </script>
 
-                    function closeDragElement() {
-                        /* stop moving when mouse button is released:*/
-                        document.onmouseup = null;
-                        document.onmousemove = null;
-                    }
-                    }
-                    </script>                    
-                </div>
-                <div class="deco-paper2">
+    <!-- MAIN COLLAGE AREA -->
+    <div class="crop-container">
 
-                               <div id="mydiv2">
-                    <div id="mydivheader2"><img src="scantron piece.png"></div>
-                    </div>
-
-                    <script>
-                    //Make the DIV element draggagle:
-                    dragElement(document.getElementById("mydiv2"));
-
-                    function dragElement(elmnt) {
-                    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-                    if (document.getElementById(elmnt.id + "header")) {
-                        /* if present, the header is where you move the DIV from:*/
-                        document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
-                    } else {
-                        /* otherwise, move the DIV from anywhere inside the DIV:*/
-                        elmnt.onmousedown = dragMouseDown;
-                    }
-
-                    function dragMouseDown(e) {
-                        e = e || window.event;
-                        e.preventDefault();
-                        // get the mouse cursor position at startup:
-                        pos3 = e.clientX;
-                        pos4 = e.clientY;
-                        document.onmouseup = closeDragElement;
-                        // call a function whenever the cursor moves:
-                        document.onmousemove = elementDrag;
-                    }
-
-                    function elementDrag(e) {
-                        e = e || window.event;
-                        e.preventDefault();
-                        // calculate the new cursor position:
-                        pos1 = pos3 - e.clientX;
-                        pos2 = pos4 - e.clientY;
-                        pos3 = e.clientX;
-                        pos4 = e.clientY;
-                        // set the element's new position:
-                        elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-                        elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-                    }
-
-                    function closeDragElement() {
-                        /* stop moving when mouse button is released:*/
-                        document.onmouseup = null;
-                        document.onmousemove = null;
-                    }
-                    }
-                    </script>                    
-                </div>
-
-                <div class="cardboard1">
-                    <img src="cardboard scan.jpg" 
-                    width="100%" height="1000px">
-                    <div class="clipped-image">
-                    </img>
-<!--                <div class="text-overlay">
-                    <a href="deco-p2.html">
-                        <div class="title"> 
-                            <h1> The Art of Decoupage </h1>
-                        </div>
-                        </a>
-                        -->
-                <div class="text-overlay2">
-                    <h4>What is Decoupage?</h4>
-                    <p>Decoupage comes from the French word “découper” meaning "cutting up”or “cut-out”. It came to be used for the technique of decorating objects with cut up pieces of paper glued to the surface, although it can be traced back to a variety of countries including Siberia, China, Italy, Germany, Poland, and of course France. </p><br>
-                    <p>In traditional decoupage decorative paper is applied to an object which is then coated with varnish for a seamless inlaid effect. Since its origins, it’s been adapted into many different evolutions, (although it keeps its original form as well) including paper tole (3D decoupage), decopatch, and reverse decoupage. Its effects can also be achieved digitally, although a bit unconventional.</p>
-
-
+        <!-- draggable paper 1 -->
+        <div class="deco-paper draggable">
+            <img src="deco paper 1.png">
         </div>
 
-        
-        
-    </body>
-  
-       
+        <!-- draggable paper 2 -->
+        <div class="deco-paper draggable">
+            <img src="scantron piece.png">
+        </div>
 
+        <!-- background cardboard -->
+        <div class="cardboard1">
+            <img src="cardboard scan.jpg" width="100%" height="1000px">
+        </div>
+
+        <!-- text -->
+        <div class="text-overlay2">
+            <h4>What is Decoupage?</h4>
+            <p>
+                Decoupage comes from the French word “découper” meaning "cutting up” or “cut-out”.
+                It came to be used for the technique of decorating objects with cut up pieces of paper
+                glued to the surface, although it can be traced back to a variety of countries including
+                Siberia, China, Italy, Germany, Poland, and of course France.
+            </p>
+            <br>
+            <p>
+                In traditional decoupage decorative paper is applied to an object which is then coated
+                with varnish for a seamless inlaid effect. Since its origins, it’s been adapted into many
+                different evolutions, including paper tole (3D decoupage), decopatch, and reverse decoupage.
+                Its effects can also be achieved digitally, although a bit unconventional.
+            </p>
+        </div>
+
+    </div>
+
+    <!-- DRAG SCRIPT -->
+    <script>
+    $(function() {
+        $(".draggable").draggable({
+            containment: false, // allows dragging outside the container
+            scroll: false   // prevents weird page scrolling while dragging"
+        });
+
+        // bring clicked item to front
+        $(".draggable").mousedown(function() {
+            $(".draggable").css("z-index", 10);
+            $(this).css("z-index", 10);
+        });
+    });
+    </script>
+
+</body>
 </html>
-
