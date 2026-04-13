@@ -5,27 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>deco2</title>
     <link rel="stylesheet" href="deco.css"/>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
+
 </head>
 
 <body class="deco-p2">
 
     <!-- HEADER AREA -->
+
+        <div class="crop-container3">
+            <div class="cardboard3">
+                <div class="clipped-image">
+                    <img src="cardboard scan.jpg">
+                </div>
+                <div class="text-overlay3">
+                    <title2> DRAG AND DISCOVER! or</title2>
+    <button id="toggleBtn" onclick="toggleDraggables()">Hide Pieces</button>
+                </div>
+            </div>
+        </div>
+
+        <!--HIDE DRAGGABLES-->        
+    <script>
+    let hidden = false;
+
+    function toggleDraggables() {
+    const items = document.querySelectorAll(".draggable");
+    const btn = document.getElementById("toggleBtn");
+
+    hidden = !hidden;
+
+    items.forEach(el => {
+        el.style.display = hidden ? "none" : "block";
+    });
+
+    btn.textContent = hidden ? "Show Pieces" : "Hide Pieces";
+    }
+    </script>
+
+    <h5> This is</h5>
+
     <div class="crop-container2">
+        <div class="deco-paper draggable">
+            <img src="deco paper 1.png">
+        </div>
+
+        <div class="deco-paper draggable">
+            <img src="scantron piece.png">
+        </div>
+
+        <div class="deco-paper draggable">
+            <img src="Artboard 2.png" width="300px">
+        </div>
+        <!-- draggable paper 4 / frame-->
+        <div class="deco-paper draggable">
+            <img src="Artboard 4.png" width="200px" height="100%">
+        </div>
+        
+        <!-- draggable paper 5 / tatld-->
+        <div class="deco-paper draggable">
+            <img src="Artboard 5.png" width="350px" height="100%">
+        </div>
+
+        <!-- draggable paper 6 / stripes-->
+        <div class="deco-paper draggable">
+            <img src="Artboard 3.png" width="300px" height="100%">
+        </div>
+
         <div class="cardboard2">
             <div class="clipped-image">
                 <img src="cardboard scan.jpg">
             </div>
-
             <div class="text-overlay">
-                <a href="deco-home.html" class="title2">
-                    The Art of Decoupage
-                </a>
+                    <div class="title">
+                        <h1><a href="deco-p2.html">The Art of Decoupage</a></h1>
+                    </div>
             </div>
         </div>
     </div>
 
     <!-- GRID -->
     <div class="grid-container">
+       <div class="item deco-type0">
+            <a href="deco-home.html">
+                <h3>the art of... What?</h3>
+            </a>
+        </div>        
         <div class="item deco-type1">
             <a href="deco-p3-0.html">
                 <img src="trans chair.png">
@@ -44,6 +112,67 @@
             </a>
         </div>
     </div>
+
+<script>
+$(function() {
+    let z = 1000;
+
+    function randomizePositions() {
+        const container = $(".crop-container2");
+        const placed = [];
+
+        $(".draggable").each(function() {
+            const el = $(this);
+
+            const elW = el.outerWidth();
+            const elH = el.outerHeight();
+
+            const maxX = container.width() - elW;
+            const maxY = container.height() - elH;
+
+            let x, y;
+            let attempts = 0;
+            const minDist = 80; // smaller because header is small
+
+            do {
+                x = Math.random() * maxX;
+                y = Math.random() * maxY;
+
+                var tooClose = placed.some(p => {
+                    const dx = p.x - x;
+                    const dy = p.y - y;
+                    return Math.sqrt(dx * dx + dy * dy) < minDist;
+                });
+
+                attempts++;
+            } while (tooClose && attempts < 50);
+
+            placed.push({ x, y });
+
+            const rotation = Math.random() * 360;
+
+            el.css({
+                left: x + "px",
+                top: y + "px",
+                transform: "rotate(" + rotation + "deg)",
+                "z-index": Math.floor(Math.random() * 100) + 1000
+            });
+        });
+    }
+
+    randomizePositions();
+
+    $(".draggable").draggable({
+        containment: false,
+        scroll: false
+    });
+
+    $(".draggable").mousedown(function() {
+        z++;
+        $(this).css("z-index", z);
+    });
+});
+</script>
 
 </body>
 </html>
