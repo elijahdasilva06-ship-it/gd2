@@ -306,6 +306,9 @@ p {
     white-space: wrap;
     text-align: left;
     margin-bottom: 1rem;
+    font-family:'baskerville old face', serif;
+    font-size: 12pt;
+    color: rgb(32, 7, 0);
     
 }
 
@@ -398,6 +401,9 @@ p {
     height: 100%;
     
 }
+
+
+
 
 /* grid 
 
@@ -503,6 +509,7 @@ button {
   overflow-x: wrap;
   grid-auto-rows: 1fr;
   
+  
 }
 
 /* Each item */
@@ -516,7 +523,7 @@ button {
 
 /* Images */
 .item img {
-  width: 100%;
+  width: 20rem;
   height: auto;
 }
 
@@ -538,12 +545,14 @@ button {
 
 .deco-type1-1 {
     width: auto;
-    position: absolute;
+    position:relative;
     scale: 80%;
-    left: -2em;
-    top: 25em;
+    top: 0rem;
+
     z-index: 1;
-   
+    margin: 0;
+    padding: 0;  
+    border:#4f071e solid 4px; 
     
 }
 .deco-type2-1 {
@@ -560,6 +569,47 @@ button {
 }
 
 
+
+/*flickity*/
+
+/* external css: flickity.css */
+
+* { box-sizing: border-box; }
+
+
+.carousel {
+  width: 60rem;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  margin-bottom: 5vw;
+}
+
+.carousel-cell {
+  width: 70%;
+  left: 50%;
+}
+
+.carousel-cell img {
+  width: auto;
+  max-height: 400px;
+  display: block;
+  border-radius: 10px;
+  border-color: #4f071e;
+  x: 50%;
+}
+
+/* cell number */
+.carousel-cell:before {
+  display: none;
+  text-align: center;
+  content: counter(gallery-cell);
+  line-height: 200px;
+  font-size: 80px;
+  color: rgb(153, 22, 22);
+  z-index: 20;
+}
+
+
 .btn {
   background-color:blueviolet;
   border: 1px; /* Optional: removes the default button border */
@@ -569,11 +619,14 @@ button {
 
 
 .mats {
+    max-width: 60rem;
+
     top: 0em;
-    margin-left: 50%;
-    margin-right: 5%;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-bottom: 5vw;
     padding: 10px; /* Space between the text and the border */
-    background-color:rgba(255, 222, 255, 0.8);
+    background-color:#fff3d7b6;
     color: rgb(0, 0, 0);
     opacity: 1;
     position: relative;
@@ -581,13 +634,15 @@ button {
 }
 
 .howto {
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-bottom: 5%;
+    max-width: 60rem;
+
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-bottom: 5vw;
     position: relative;
     padding: 10px; /* Space between the text and the border */
     opacity: 0.8;
-    background-color:  rgba(255, 222, 255, 0.8);
+    background-color:  #fff3d7b6;
     color: rgb(0, 0, 0);
     opacity: 1;
     
@@ -595,9 +650,12 @@ button {
 }
 
 .mats1 {
-    top: 0;
-    margin-left: 50%;
-    margin-right: 5%;
+    max-width: 60rem;
+
+    top: 0em;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-bottom: 5vw;
     padding: 10px; /* Space between the text and the border */
     background-color:rgba(237, 207, 201, 0.8);
     color: rgb(0, 0, 0);
@@ -607,11 +665,12 @@ button {
 }
 
 .howto1 {
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-bottom: 5%;
+    max-width: 60rem;
+
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-bottom: 5vw;
     position: relative;
-    top: 0%;
     padding: 10px; /* Space between the text and the border */
     opacity: 0.8;
     background-color:  rgba(237, 207, 201, 0.8);
@@ -620,6 +679,8 @@ button {
     
 
 }
+
+
 
 .desc {
     margin-left: 50%;
@@ -735,13 +796,13 @@ body:not(.deco-home):not(.deco-p2):not(.deco-p3-1):not(.deco-p3-2)::before {
     position: fixed;
     inset: 0;
 
-    background-image: url("w and b polka dot bkgr.jpg");
+    background-image: url("../deco2/Tiny-Diamond-Printable-Paper-7.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
 
-    opacity: 0.8; /* 👈 change this */
+    opacity: 1; /* 👈 change this */
     z-index: -1;
 }
 
@@ -769,7 +830,7 @@ background-image: url("../deco2/rosey wallpaper.jpg");
     
 }
 
-/* p2, scantron*/
+/* p2, selection*/
 body:not(.deco-home):not(.deco-p2):not(.deco-p3-1):not(.deco-p3-2) {
     position: relative;
     background-color: rgb(242, 191, 242);
@@ -805,7 +866,7 @@ body:not(.deco-p2):not(.deco-p3-1):not(.deco-p3-0):not(.deco-p3-2)::before {
     position: fixed;
     inset: 0;
 
-    background-image: url("../deco2/col col.jpg");
+    background-image: url("../deco2/col col.jpg") ;
     background-size: 150%;
     background-position: center;
     background-repeat: no-repeat;
@@ -813,7 +874,7 @@ body:not(.deco-p2):not(.deco-p3-1):not(.deco-p3-0):not(.deco-p3-2)::before {
     
     zoom: 100%;
 
-    opacity: 1; /* 👈 change this */
+    opacity: 0.8; /* 👈 change this */
     z-index: -1;
     
     
