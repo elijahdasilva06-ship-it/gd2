@@ -362,6 +362,7 @@ p {
 .clipped-image,
 .clipped-image img {
   pointer-events: none;
+  scale: 100%;
 }
 
 
@@ -496,9 +497,12 @@ button {
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 in a row */
+  grid-template-columns: repeat(2, 1fr); /* 3 in a row */
   gap: 10px;
   padding-top: 15rem;
+  overflow-x: wrap;
+  grid-auto-rows: 1fr;
+  
 }
 
 /* Each item */
@@ -777,7 +781,7 @@ body:not(.deco-home):not(.deco-p3-1):not(.deco-p3-0):not(.deco-p3-2):before {
     position: fixed;
     inset: 0;
 
-    background-image: url("../deco2/scantron sheet.jpg");
+    background-image: url("../deco2/Retro-70s-Floral-burst-8.5x11-Digital-Paper7.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
