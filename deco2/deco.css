@@ -65,6 +65,31 @@
   pointer-events: none; /* 🔥 important */
   z-index: 1;
 }
+
+ .crop-container4 {
+  width: 45vw; /* Desired width of the cropped area */
+  height: 100%; /* Desired height of the cropped area */
+  overflow:hidden; /* Hides the parts outside the container */
+  max-height: 30rem;
+  max-width: 30rem;
+  margin-left: 0;
+  margin-top: 4rem;
+  top: 8rem;
+
+  position: fixed; /* Needed for absolute positioning of the image, if used */
+  box-shadow: inset 0.2rem 0.2rem 1rem 0.3rem rgba(0, 0, 0, 0.5);
+
+}
+
+.crop-container4::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0.2rem 0.2rem 1rem 0.3rem rgba(0, 0, 0, 0.5);
+  pointer-events: none; /* 🔥 important */
+  z-index: 10001;
+}
+
    
 .cardboard1 {
     width: 200%;
@@ -578,25 +603,32 @@ button {
 
 
 .carousel {
-  width: 60rem;
-  margin-left: 5vw;
-  margin-right: 5vw;
-  margin-bottom: 5vw;
+  position: fixed;
+  content: "fit-to-container";
+  align-self: baseline;
+
+  right: -12rem;   /* 👈 sticks to right side */
+  top: 50%;      /* 👈 vertically center */
+  transform: translateY(-50%);
+
+  width: 30vw;   /* 👈 responsive width */
+  max-width: 400px;
+
+  z-index: 1000;
 }
 
 .carousel-cell {
-  width: 70%;
-  left: 50%;
+  width: 100%;
 }
 
 .carousel-cell img {
-  width: auto;
+  width: 100%;
   max-height: 400px;
+  object-fit: contain;
   display: block;
-  border-radius: 10px;
-  border-color: #4f071e;
-  x: 50%;
+  content: "fit-to-container";
 }
+
 
 /* cell number */
 .carousel-cell:before {
@@ -783,14 +815,14 @@ TRAD DECO*/
 
     
 }
-    */
+    
 
 body:not(.deco-home):not(.deco-p2):not(.deco-p3-1):not(.deco-p3-2) {
     position: relative;
     background-color: rgb(255, 255, 255);
 }
 
-/* background layer */
+/* background layer 
 body:not(.deco-home):not(.deco-p2):not(.deco-p3-1):not(.deco-p3-2)::before {
     content: "";
     position: fixed;
@@ -802,18 +834,18 @@ body:not(.deco-home):not(.deco-p2):not(.deco-p3-1):not(.deco-p3-2)::before {
     background-repeat: no-repeat;
     background-attachment: fixed;
 
-    opacity: 1; /* 👈 change this */
+    opacity: 1; 
     z-index: -1;
 }
 
 
-/* p3, paper tole*/
+/* p3, paper tole
 body:not(.deco-home):not(.deco-p2):not(.deco-p3-1):not(.deco-p3-2) {
     position: relative;
     background-color: rgb(242, 191, 242);
 }
 
-/* background layer */
+/* background layer 
 body:not(.deco-home):not(.deco-p2):not(.deco-p3-0):not(.deco-p3-2)::before {
     content: "";
     position: fixed;
@@ -825,18 +857,18 @@ background-image: url("../deco2/rosey wallpaper.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
 
-    opacity: 0.5; /* 👈 change this */
+    opacity: 0.5; 
     z-index: -1;
     
 }
 
-/* p2, selection*/
+/* p2, selection
 body:not(.deco-home):not(.deco-p2):not(.deco-p3-1):not(.deco-p3-2) {
     position: relative;
     background-color: rgb(242, 191, 242);
 }
 
-/* background layer */
+/* background layer 
 body:not(.deco-home):not(.deco-p3-1):not(.deco-p3-0):not(.deco-p3-2):before {
     content: "";
     position: fixed;
@@ -848,19 +880,19 @@ body:not(.deco-home):not(.deco-p3-1):not(.deco-p3-0):not(.deco-p3-2):before {
     background-repeat: no-repeat;
     background-attachment: fixed;
 
-    opacity: 1; /* 👈 change this */
+    opacity: 1; 
     z-index: -1;
     
     
 }
 
-/* p2, col col*/
+/* p2, col col
 body:not(.deco-home):not(.deco-p2):not(.deco-p3-1):not(.deco-p3-2) {
     position: relative;
     background-color: rgb(242, 191, 242);
 }
 
-/* background layer */
+/* background layer */  /*
 body:not(.deco-p2):not(.deco-p3-1):not(.deco-p3-0):not(.deco-p3-2)::before {
     content: "";
     position: fixed;
@@ -874,7 +906,7 @@ body:not(.deco-p2):not(.deco-p3-1):not(.deco-p3-0):not(.deco-p3-2)::before {
     
     zoom: 100%;
 
-    opacity: 0.8; /* 👈 change this */
+    opacity: 0.8; 
     z-index: -1;
     
     
@@ -884,7 +916,7 @@ body:not(.deco-p2):not(.deco-p3-1):not(.deco-p3-0):not(.deco-p3-2)::before {
     display: grid;
     place-items: center;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px; /* Adjust the gap between items as needed */
+    gap: 10px; 
     margin-top: 20rem;
     margin-left: 5rem;
     margin-right: 5rem;
