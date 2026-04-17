@@ -1,9 +1,35 @@
+.two-col {
+  display: flex;
+  flex-direction: row-reverse; /* force horizontal */
+  align-items: flex-start;
+
+  width: 100%;
+  gap: 2rem;
+  margin-right: 2rem;
+  
+}
+
+.left-col {
+  width: 50%;
+  overflow-y: visible;
+  overflow-x: hidden;
+  
+  z-index: 0;
+}
+
+.right-col {
+  width: 50%;
+}
+
+
 
 .crop-container {
-  width: 90vw;
   height: 70vh;
   overflow: hidden;
   position: relative;
+  margin-left: 5vw;
+  margin-right: 5vw;
+
 }
 
 
@@ -17,16 +43,17 @@
   z-index: 10001;
 }
 
-
-
-
  .crop-container2 {
-  width: 95vw; /* Desired width of the cropped area */
+  width: 94vw; /* Desired width of the cropped area */
   height: 100%; /* Desired height of the cropped area */
   overflow:hidden; /* Hides the parts outside the container */
   max-height: 10rem;
   margin-left: 0;
   margin-top: 4rem;
+
+  background-image: url('cardboard scan.jpg');
+  background-size: 150%;
+  background-position: center;
 
   position: fixed; /* Needed for absolute positioning of the image, if used */
   box-shadow: inset 0.2rem 0.2rem 1rem 0.3rem rgba(0, 0, 0, 0.5);
@@ -51,6 +78,9 @@
   max-width: 20rem;
   min-width:20em;
 
+  background-image: url('cardboard scan.jpg');
+  background-size: 300%;
+  background-position: center;
 
   position: fixed; /* Needed for absolute positioning of the image, if used */
   box-shadow: inset 0.2rem 0.2rem 1rem 0.3rem rgba(0, 0, 0, 0.5);
@@ -66,19 +96,41 @@
   z-index: 1;
 }
 
- .crop-container4 {
-  width: 45vw; /* Desired width of the cropped area */
-  height: 100%; /* Desired height of the cropped area */
-  overflow:hidden; /* Hides the parts outside the container */
-  max-height: 30rem;
-  max-width: 30rem;
-  margin-left: 0;
-  margin-top: 4rem;
-  top: 8rem;
+/*
+.crop-container4 {
+  position: relative; 
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  height: 5rem;
 
-  position: fixed; /* Needed for absolute positioning of the image, if used */
+  max-width: 45vw;
+  max-height: 95vh; 
+  left: 50vw;
+  top: 20rem;
+
+  overflow: hidden; 
+
   box-shadow: inset 0.2rem 0.2rem 1rem 0.3rem rgba(0, 0, 0, 0.5);
 
+} */
+
+.crop-container4 {
+  width: 45vw;
+  height: 45vw;
+  max-width: 35rem;
+  max-height: 32.3rem;
+   
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: fixed;
+  overflow: visible;
+  box-shadow: inset 0.2rem 0.2rem 1rem 0.3rem rgba(0, 0, 0, 0.5);
+  background-image: url('cardboard scan.jpg');
+  background-size: cover;
+  background-position: center;
 }
 
 .crop-container4::before {
@@ -87,7 +139,7 @@
   inset: 0;
   box-shadow: inset 0.2rem 0.2rem 1rem 0.3rem rgba(0, 0, 0, 0.5);
   pointer-events: none; /* 🔥 important */
-  z-index: 10001;
+  z-index: 1;
 }
 
    
@@ -100,7 +152,7 @@
 }
 
 .cardboard2 {
-    width: 100vw;
+    width: 130%;
     height: 130%;
     position: relative;
     z-index: 0;
@@ -110,6 +162,15 @@
 .cardboard3 {
     width: 70vw;
     height: 100%;
+    position: relative;
+    z-index: 0;
+    /*transform: rotate(90deg);*/
+}
+
+.cardboard4 {
+    width: 100%;
+    height: 100%;
+    left: -300px;
     position: relative;
     z-index: 0;
     /*transform: rotate(90deg);*/
@@ -125,6 +186,9 @@
   pointer-events: none;
   user-select: none;
 }
+
+
+
 
 
 /*TEXTS-------------------*/
@@ -145,8 +209,10 @@
     
 }
 
+
+
 .title2{
-    font-size: 24pt;
+    font-size: 12pt;
     font-family:'baskerville old face', serif;
     color: rgb(32, 7, 0);
     top: -140%;
@@ -180,11 +246,11 @@ h1 {
 
 
 h2 {
-    font-family: Tahoma, Geneva, Verdana, 'Segoe UI',  sans-serif;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 22pt;
     color: rgb(62, 48, 30);
     position: relative;
-    margin-left: 40px;
+    margin-left: 2rem;
 
 
 }
@@ -245,11 +311,8 @@ h3 { /*BOTTOM--paper behind*/
     x: fixed;
     text-align: center;
     letter-spacing: 0.8rem;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 30pt;
-    text-transform: uppercase;
 
-      display: inline-block;
+    display: inline-block;
 
   font-family: 'Baskerville Old Face', serif;
   font-size: 2rem;
@@ -292,6 +355,7 @@ h3 { /*BOTTOM--paper behind*/
   inset: 0;
   box-shadow: inset 0 0 3px rgba(0,0,0,0.2);
   pointer-events: none;
+
 }
     
 
@@ -302,7 +366,9 @@ h4 { /*home-what is deco*/
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 30pt;
     text-transform: uppercase;
-    margin: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
     
 }
 
@@ -327,6 +393,19 @@ ul {
 
 }
 
+h6 {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 12pt;
+    font-weight: normal;
+    font-variant: normal;
+    margin-top:1em;
+    margin-bottom:1em;
+    margin-left:0;
+
+
+
+}
+
 p {
     white-space: wrap;
     text-align: left;
@@ -337,10 +416,52 @@ p {
     
 }
 
-/* a {
-    
 
-}  */
+button {
+    font-family:'baskerville old face', serif;
+    font-size: 12pt;
+    color: rgb(32, 7, 0);
+    left: 50%;
+    text-align: center;
+    z-index: 11;
+
+  border: none; /* Optional: removes the default button border */
+  /* Add other styles like color, padding, etc. */
+
+  display: inline-block;
+
+  background: #f8f1df; /* paper color */
+  color: #2b1a12;
+
+  padding: 0.3rem 0.8rem;
+
+  /*  imperfect cut edges */
+  clip-path: polygon(
+    20% 0%, 97% 2%, 100% 90%, 95% 80%, 
+    5% 98%, 0% 20%
+  );
+
+  /* 🌫️ paper shadow (lifted look) */
+  box-shadow:
+    2px 2px 0 rgba(0,0,0,0.25),
+    4px 4px 6px rgba(0,0,0,0.2);
+
+  /* 📐 slightly crooked */
+  transform: rotate(-3deg);
+
+  /* 📄 subtle paper texture */
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(0,0,0,0.03),
+    rgba(0,0,0,0.03) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+
+.homebut {
+    margin-left: 5vw;
+}
 
 
 .text-overlay {
@@ -395,13 +516,15 @@ p {
 
 
 .text-overlay3 {
-    position: sticky;
-    /*transform: translate(-50%, -50%);*/
-    white-space: nowrap;
-    z-index: 10;
-    margin: 0;
-    margin-top: -2.2rem;
-    margin-left: 1rem;
+  position: sticky;
+  /*transform: translate(-50%, -50%);*/
+  white-space: nowrap;
+  z-index: 10;
+  margin: 0;
+  margin-top: -2.2rem;
+  margin-left: 1rem;
+  font-family: 'Baskerville Old Face', serif;
+  font-size: 12pt;
 
 }
 
@@ -458,53 +581,7 @@ p {
   /* grid-column: 2 / 4; */
 }
 
-button {
-    font-family:'baskerville old face', serif;
-    font-size: 12pt;
-    color: rgb(32, 7, 0);
-    left: 50%;
-    text-align: center;
-    z-index: 11;
 
-
-
-
-
-  border: none; /* Optional: removes the default button border */
-  /* Add other styles like color, padding, etc. */
-
-  display: inline-block;
-
-
-
-  background: #f8f1df; /* paper color */
-  color: #2b1a12;
-
-  padding: 0.3rem 0.8rem;
-
-  /*  imperfect cut edges */
-  clip-path: polygon(
-    20% 0%, 97% 2%, 100% 90%, 95% 80%, 
-    5% 98%, 0% 20%
-  );
-
-  /* 🌫️ paper shadow (lifted look) */
-  box-shadow:
-    2px 2px 0 rgba(0,0,0,0.25),
-    4px 4px 6px rgba(0,0,0,0.2);
-
-  /* 📐 slightly crooked */
-  transform: rotate(-3deg);
-
-  /* 📄 subtle paper texture */
-  background-image: repeating-linear-gradient(
-    0deg,
-    rgba(0,0,0,0.03),
-    rgba(0,0,0,0.03) 1px,
-    transparent 1px,
-    transparent 3px
-  );
-}
 
 /* 🧷 pressed/glued effect */
 .text-overlay h4::after {
@@ -602,33 +679,39 @@ button {
 * { box-sizing: border-box; }
 
 
+
 .carousel {
-  position: fixed;
-  content: "fit-to-container";
-  align-self: baseline;
+  position: relative; /* or just delete position */
 
-  right: -12rem;   /* 👈 sticks to right side */
-  top: 50%;      /* 👈 vertically center */
-  transform: translateY(-50%);
+  width: 45vw;       /* adjust as needed */
+  max-width: 35rem;
 
-  width: 30vw;   /* 👈 responsive width */
-  max-width: 400px;
-
-  z-index: 1000;
+  margin: 0;        /* remove margins */
+  height: 100%;
+  padding-bottom: 3rem;
 }
 
 .carousel-cell {
-  width: 100%;
+  width: 45vw;          /* each image takes full frame */
+  height: 45vw;
+
+  max-width: 100%;
+  max-height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .carousel-cell img {
-  width: 100%;
-  max-height: 400px;
-  object-fit: contain;
-  display: block;
-  content: "fit-to-container";
-}
+  max-width: 100%;
+  max-height: 100%;
 
+  width: auto;
+  height: auto;
+
+  object-fit: contain; /* keeps full image visible */
+}
 
 /* cell number */
 .carousel-cell:before {
@@ -636,11 +719,65 @@ button {
   text-align: center;
   content: counter(gallery-cell);
   line-height: 200px;
-  font-size: 80px;
+  font-size: 0px;
   color: rgb(153, 22, 22);
   z-index: 20;
 }
 
+.flickity-page-dots {
+  position: absolute !important;
+
+  left: auto !important;   /* 🔥 override Flickity */
+  right: 0px !important;
+
+  width: auto !important;  /* 🔥 stop full-width behavior */
+  text-align: right;       /* align dots inside */
+
+  transform: none !important;
+}
+
+.flickity-prev-next-button {
+  transform: none;
+  width: 50px;
+  height: 50px;
+  top: auto;
+  bottom: 10px;              /* vertically center on the image */
+  transform: translateY(-50%);
+  z-index: 11;
+  display: none;
+  
+}
+
+.flickity-prev-next-button.previous {
+  right: 120px;
+  background: transparent; /* remove default circle */
+  
+}
+
+.flickity-prev-next-button.next {
+  right: 10px;
+  background: transparent; /* remove default circle */
+
+}
+
+.flickity-prev-next-button {
+  background: transparent; /* remove default circle */
+}
+
+.flickity-prev-next-button .flickity-button-icon {
+  fill: #0000008f; /* arrow color */
+}
+
+.flickity-page-dots .dot {
+  width: 10px;
+  height: 10px;
+  background: black;
+  opacity: 0.5;
+}
+
+.flickity-page-dots .dot.is-selected {
+  opacity: 1;
+}
 
 .btn {
   background-color:blueviolet;
@@ -652,13 +789,15 @@ button {
 
 .mats {
     max-width: 60rem;
+    width: 45vw;
 
     top: 0em;
-    margin-left: 5vw;
-    margin-right: 5vw;
+    margin-left: 0;
+    margin-right: 0;
     margin-bottom: 5vw;
-    padding: 10px; /* Space between the text and the border */
-    background-color:#fff3d7b6;
+    /*padding: 10px;  Space between the text and the border */
+    padding-right: 1rem;
+    background-color:#ffddf100;
     color: rgb(0, 0, 0);
     opacity: 1;
     position: relative;
@@ -667,9 +806,10 @@ button {
 
 .howto {
     max-width: 60rem;
+    width: 45vw;
 
-    margin-left: 5vw;
-    margin-right: 5vw;
+    margin-left: 0;
+    margin-right: 0;
     margin-bottom: 5vw;
     position: relative;
     padding: 10px; /* Space between the text and the border */
@@ -791,7 +931,7 @@ button {
 }
 
 body {
-    padding: 1rem;
+    padding: 3vw;
     
 }
 
@@ -802,14 +942,19 @@ body {
 
 TRAD DECO*/
 
-/* body:not(.deco-home):not(.deco-p2):not(.deco-p3-1):not(.deco-p3-2) {
-    background-color: black;
-    background-image: url('w and b polka dot bkgr.jpg');
+ body:not(.deco-home):not(.deco-p2):not(.deco-p3-1):not(.deco-p3-2) {
+    background-image: url('bkgr/oragamipap.jpg');
+    
+    /*filter: hue-rotate(30deg);*/
+    /*background-color: #2b0e44; /* The color filter */
+    /*background-blend-mode:darken;        /* Common modes: multiply, screen, overlay */
+  /*  background: linear-gradient(rgba(0, 151, 90, 0.758)), url('bkgr/oragamipap.jpg');*/
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    overflow: hidden;
+    
+    overflow-x: hidden;
     width: 100vw;
     height: 100vh;
 
@@ -819,16 +964,16 @@ TRAD DECO*/
 
 body:not(.deco-home):not(.deco-p2):not(.deco-p3-1):not(.deco-p3-2) {
     position: relative;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(152, 82, 82);
 }
 
-/* background layer 
+ background layer 
 body:not(.deco-home):not(.deco-p2):not(.deco-p3-1):not(.deco-p3-2)::before {
     content: "";
     position: fixed;
     inset: 0;
 
-    background-image: url("../deco2/Tiny-Diamond-Printable-Paper-7.jpg");
+    background-image: url("../deco2/bkgr/graphpap.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -839,19 +984,19 @@ body:not(.deco-home):not(.deco-p2):not(.deco-p3-1):not(.deco-p3-2)::before {
 }
 
 
-/* p3, paper tole
+ p3, paper tole
 body:not(.deco-home):not(.deco-p2):not(.deco-p3-1):not(.deco-p3-2) {
     position: relative;
     background-color: rgb(242, 191, 242);
 }
 
-/* background layer 
+ background layer 
 body:not(.deco-home):not(.deco-p2):not(.deco-p3-0):not(.deco-p3-2)::before {
     content: "";
     position: fixed;
     inset: 0;
 
-background-image: url("../deco2/rosey wallpaper.jpg");
+background-image: url("../deco2/bkgr/notebookpap.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -861,20 +1006,21 @@ background-image: url("../deco2/rosey wallpaper.jpg");
     z-index: -1;
     
 }
+    
 
-/* p2, selection
+ p2, selection
 body:not(.deco-home):not(.deco-p2):not(.deco-p3-1):not(.deco-p3-2) {
     position: relative;
     background-color: rgb(242, 191, 242);
 }
 
-/* background layer 
+ background layer 
 body:not(.deco-home):not(.deco-p3-1):not(.deco-p3-0):not(.deco-p3-2):before {
     content: "";
     position: fixed;
     inset: 0;
 
-    background-image: url("../deco2/Retro-70s-Floral-burst-8.5x11-Digital-Paper7.jpg");
+    background-image: url("../deco2/bkgr/graphpap.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -886,19 +1032,19 @@ body:not(.deco-home):not(.deco-p3-1):not(.deco-p3-0):not(.deco-p3-2):before {
     
 }
 
-/* p2, col col
+/* p2, col col*/
 body:not(.deco-home):not(.deco-p2):not(.deco-p3-1):not(.deco-p3-2) {
     position: relative;
     background-color: rgb(242, 191, 242);
 }
 
-/* background layer */  /*
+/* background layer */  
 body:not(.deco-p2):not(.deco-p3-1):not(.deco-p3-0):not(.deco-p3-2)::before {
     content: "";
     position: fixed;
     inset: 0;
 
-    background-image: url("../deco2/col col.jpg") ;
+    background-image: url("../deco2/bkgr/backpap.jpg") ;
     background-size: 150%;
     background-position: center;
     background-repeat: no-repeat;
@@ -906,7 +1052,7 @@ body:not(.deco-p2):not(.deco-p3-1):not(.deco-p3-0):not(.deco-p3-2)::before {
     
     zoom: 100%;
 
-    opacity: 0.8; 
+    opacity: 1; 
     z-index: -1;
     
     
