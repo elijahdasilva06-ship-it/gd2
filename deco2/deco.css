@@ -1,6 +1,6 @@
 .two-col {
   display: flex;
-  flex-direction: row-reverse; /* force horizontal */
+  flex-direction:row-reverse; /* force horizontal */
   align-items: flex-start;
 
   width: 100%;
@@ -10,15 +10,31 @@
 }
 
 .left-col {
-  width: 50%;
+  width: 60vw;
+  margin-left: 0;
   overflow-y: visible;
   overflow-x: hidden;
   
   z-index: 0;
+  /*background-image: url(bkgr/oragamipap.jpg);
+  
+  /*filter: hue-rotate(30deg);*/
+  /*background-color: #2b0e44; /* The color filter */
+  /*background-blend-mode:darken;        /* Common modes: multiply, screen, overlay */
+/*  background: linear-gradient(rgba(0, 151, 90, 0.758)), url('bkgr/oragamipap.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment:scroll;
+  box-shadow: 0.1rem 0.1rem 0.5rem 0.05rem rgba(0, 0, 0, 0.281);*/
+  
 }
+
+
 
 .right-col {
   width: 50%;
+  margin-right: 3rem;
 }
 
 
@@ -213,7 +229,7 @@
 
 .title2{
     font-size: 12pt;
-    font-family:'baskerville old face', serif;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: rgb(32, 7, 0);
     top: -140%;
     left: 50%;
@@ -229,7 +245,7 @@
     
     font-size: 30pt;
     font-variant-caps: normal;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     justify-content:center;
     position: sticky;
     top: 20%;
@@ -688,7 +704,7 @@ button {
 
   margin: 0;        /* remove margins */
   height: 100%;
-  padding-bottom: 3rem;
+  padding-bottom: 0rem;
 }
 
 .carousel-cell {
@@ -788,37 +804,50 @@ button {
 
 
 .mats {
-    max-width: 60rem;
-    width: 45vw;
+  max-width: 60rem;
+  width: 45vw;
 
-    top: 0em;
-    margin-left: 0;
-    margin-right: 0;
-    margin-bottom: 5vw;
-    /*padding: 10px;  Space between the text and the border */
-    padding-right: 1rem;
-    background-color:#ffddf100;
-    color: rgb(0, 0, 0);
-    opacity: 1;
-    position: relative;
+  top: 0em;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  /*padding: 10px;  Space between the text and the border */
+  padding-right:2rem;
+  padding-top: 1rem;
+  color: rgb(0, 0, 0);
+  opacity: 1;
+  position: relative;
+
+  background-image: url(bkgr/oragamipap.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment:scroll;
+  box-shadow: 0rem 0.3rem 0.6rem rgba(0, 0, 0, 0.15);
 
 }
 
 .howto {
-    max-width: 60rem;
-    width: 45vw;
+  max-width: 60rem;
+  width: 45vw;
 
-    margin-left: 0;
-    margin-right: 0;
-    margin-bottom: 5vw;
-    position: relative;
-    padding: 10px; /* Space between the text and the border */
-    opacity: 0.8;
-    background-color:  #fff3d7b6;
-    color: rgb(0, 0, 0);
-    opacity: 1;
-    
+  top: 0em;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  /*padding: 10px;  Space between the text and the border */
+  padding-right:2rem;
+  padding-top: 1rem;
+  color: rgb(0, 0, 0);
+  opacity: 1;
+  position: relative;
 
+  background-image: url(bkgr/oragamipap.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment:scroll;
+  box-shadow: 0rem 0.3rem 0.6rem rgba(0, 0, 0, 0.15);
 }
 
 .mats1 {
@@ -962,6 +991,25 @@ TRAD DECO*/
 }
     
 
+ body:not(.deco-home):not(.deco-p3-0):not(.deco-p3-1):not(.deco-p3-2) {
+    background-image: url('bkgr/graphpap.jpg');
+    
+    /*filter: hue-rotate(30deg);*/
+    /*background-color: #2b0e44; /* The color filter */
+    /*background-blend-mode:darken;        /* Common modes: multiply, screen, overlay */
+  /*  background: linear-gradient(rgba(0, 151, 90, 0.758)), url('bkgr/oragamipap.jpg');*/
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+    overflow-x: hidden;
+    width: 100vw;
+    height: 100vh;
+    
+}
+
+
 body:not(.deco-home):not(.deco-p2):not(.deco-p3-1):not(.deco-p3-2) {
     position: relative;
     background-color: rgb(152, 82, 82);
@@ -1002,7 +1050,7 @@ background-image: url("../deco2/bkgr/notebookpap.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
 
-    opacity: 0.5; 
+    opacity: 1; 
     z-index: -1;
     
 }
