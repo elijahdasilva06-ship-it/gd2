@@ -802,7 +802,7 @@ button {
   
 }
 
-
+/*trad deco*/
 .mats {
   max-width: 60rem;
   width: 45vw;
@@ -818,7 +818,7 @@ button {
   opacity: 1;
   position: relative;
 
-  background-image: url(bkgr/oragamipap.jpg);
+  background-image: url(bkgr/backpap3.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -828,7 +828,7 @@ button {
 }
 
 .howto {
-  max-width: 60rem;
+  max-width: 80vw;
   width: 45vw;
 
   top: 0em;
@@ -850,35 +850,79 @@ button {
   box-shadow: 0rem 0.3rem 0.6rem rgba(0, 0, 0, 0.15);
 }
 
-.mats1 {
-    max-width: 60rem;
+/*ptole*/
 
-    top: 0em;
-    margin-left: 5vw;
-    margin-right: 5vw;
-    margin-bottom: 5vw;
-    padding: 10px; /* Space between the text and the border */
-    background-color:rgba(237, 207, 201, 0.8);
-    color: rgb(0, 0, 0);
-    opacity: 1;
-    position: relative;
+.mats1 {
+  max-width: 80vw;
+  width: 45vw;
+
+  top: 0em;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  /*padding: 10px;  Space between the text and the border */
+  padding-right:2rem;
+  padding-top: 1rem;
+  color: rgb(0, 0, 0);
+  opacity: 1;
+  position: relative;
+
+  background-image: url(bkgr/oragamipap.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment:scroll;
+  box-shadow: 0rem 0.3rem 0.6rem rgba(0, 0, 0, 0.15);
 
 }
 
 .howto1 {
-    max-width: 60rem;
+  max-width: 60rem;
+  width: 45vw;
 
-    margin-left: 5vw;
-    margin-right: 5vw;
-    margin-bottom: 5vw;
-    position: relative;
-    padding: 10px; /* Space between the text and the border */
-    opacity: 0.8;
-    background-color:  rgba(237, 207, 201, 0.8);
-    color: rgb(0, 0, 0);
-    opacity: 1;
-    
+  top: 0em;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  /*padding: 10px;  Space between the text and the border */
+  padding-right:2rem;
+  padding-top: 1rem;
+  color: rgb(0, 0, 0);
+  opacity: 1;
+  position: relative;
 
+  background-image: url(bkgr/oragamipap.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment:scroll;
+  box-shadow: 0rem 0.3rem 0.6rem rgba(0, 0, 0, 0.15);
+
+}
+
+
+/*rev deco*/
+.mats2 {
+  max-width: 80vw;
+  width: 45vw;
+
+  top: 0em;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  /*padding: 10px;  Space between the text and the border */
+  padding-right:2rem;
+  padding-top: 1rem;
+  color: rgb(0, 0, 0);
+  opacity: 1;
+  position: relative;
+
+  background-image: url(bkgr/backpap2.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment:scroll;
+  box-shadow: 0rem 0.3rem 0.6rem rgba(0, 0, 0, 0.15);
 }
 
 
@@ -971,13 +1015,9 @@ body {
 
 TRAD DECO*/
 
- body:not(.deco-home):not(.deco-p2):not(.deco-p3-1):not(.deco-p3-2) {
+/* body:not(.deco-home):not(.deco-p2):not(.deco-p3-1):not(.deco-p3-2) {
     background-image: url('bkgr/oragamipap.jpg');
     
-    /*filter: hue-rotate(30deg);*/
-    /*background-color: #2b0e44; /* The color filter */
-    /*background-blend-mode:darken;        /* Common modes: multiply, screen, overlay */
-  /*  background: linear-gradient(rgba(0, 151, 90, 0.758)), url('bkgr/oragamipap.jpg');*/
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -990,45 +1030,39 @@ TRAD DECO*/
     
 }
     
-
- body:not(.deco-home):not(.deco-p3-0):not(.deco-p3-1):not(.deco-p3-2) {
-    background-image: url('bkgr/graphpap.jpg');
-    
-    /*filter: hue-rotate(30deg);*/
-    /*background-color: #2b0e44; /* The color filter */
-    /*background-blend-mode:darken;        /* Common modes: multiply, screen, overlay */
-  /*  background: linear-gradient(rgba(0, 151, 90, 0.758)), url('bkgr/oragamipap.jpg');*/
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    
-    overflow-x: hidden;
-    width: 100vw;
-    height: 100vh;
-    
+/*selection*/
+ body:not(.deco-home)  /*:not(.deco-p3-0):not(.deco-p3-1):not(.deco-p3-2)*/ {
+  background-image: url('bkgr/graphpap.jpg');
+  
+  /*filter: hue-rotate(30deg);*/
+  /*background-color: #2b0e44; /* The color filter */
+  /*background-blend-mode:darken;        /* Common modes: multiply, screen, overlay */
+/*  background: linear-gradient(rgba(0, 151, 90, 0.758)), url('bkgr/oragamipap.jpg');*/
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  
+  overflow-x: hidden;
+  width: 100vw;
+  height: 100vh;
+  
 }
 
+/*rev deco*/
+  body:not(.deco-home):not(.deco-p2):not(.deco-p3-1):not(.deco-p3-0)::before {
+  content: "";
+  position: fixed;
+  inset: 0;
 
-body:not(.deco-home):not(.deco-p2):not(.deco-p3-1):not(.deco-p3-2) {
-    position: relative;
-    background-color: rgb(152, 82, 82);
-}
+  background-image: url("../deco2/bkgr/graphpap.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 
- background layer 
-body:not(.deco-home):not(.deco-p2):not(.deco-p3-1):not(.deco-p3-2)::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-
-    background-image: url("../deco2/bkgr/graphpap.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-
-    opacity: 1; 
-    z-index: -1;
+  opacity: 1; 
+  z-index: -1;
 }
 
 
@@ -1080,28 +1114,23 @@ body:not(.deco-home):not(.deco-p3-1):not(.deco-p3-0):not(.deco-p3-2):before {
     
 }
 
-/* p2, col col*/
-body:not(.deco-home):not(.deco-p2):not(.deco-p3-1):not(.deco-p3-2) {
-    position: relative;
-    background-color: rgb(242, 191, 242);
-}
 
 /* background layer */  
 body:not(.deco-p2):not(.deco-p3-1):not(.deco-p3-0):not(.deco-p3-2)::before {
-    content: "";
-    position: fixed;
-    inset: 0;
+  content: "";
+  position: fixed;
+  inset: 0;
 
-    background-image: url("../deco2/bkgr/backpap.jpg") ;
-    background-size: 150%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    
-    zoom: 100%;
+  background-image: url("../deco2/bkgr/backpap.jpg") ;
+  background-size: 150%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  
+  zoom: 100%;
 
-    opacity: 1; 
-    z-index: -1;
+  opacity: 1; 
+  z-index: -1;
     
     
 }
