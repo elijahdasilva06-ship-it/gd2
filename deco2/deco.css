@@ -38,6 +38,7 @@
 }
 
 
+/*scrap sandboxes and cardboard areas*/
 
 .crop-container {
   height: 70vh;
@@ -221,10 +222,52 @@
     z-index: 10;
     white-space: nowrap;
     
-    
-    
 }
 
+/*title animation*/
+
+a {
+  color: #610022b6; /*like pen inks*/
+  text-decoration: none;
+  
+}
+
+a:hover {
+  color: #010c54d1;
+  text-decoration:none;
+}
+
+/* 4. Selected link (the moment it is clicked) */
+a:active {
+  color: #11001c;
+}
+
+
+
+.title {
+  opacity: 1;
+  transform: translateY(-10px) rotate(-0deg);
+  animation: paperDrop 0.8s ease-out forwards;
+}
+
+/*@keyframes paperDrop {
+  60% {
+    transform: translateY(10px) rotate(2deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+}*/
+
+.title {
+  transition: transform 0.3s ease;
+}
+
+.title:hover {
+  transform: rotate(-2deg) scale(1.05);
+}
 
 
 .title2{
@@ -299,20 +342,20 @@ h5 { /*TOP--paper behind*/
   
 
 
-  /* ✂️ imperfect cut edges */
+  /*  cut edges */
   clip-path: polygon(
     3% 0%, 97% 2%, 100% 90%, 95% 100%, 
     5% 98%, 0% 10%
   );
 
-  /* 🌫️ paper shadow (lifted look) */
+  /* paper shadow */
   box-shadow:
     2px 2px 0 rgba(0,0,0,0.25),
     4px 4px 6px rgba(0,0,0,0.2);
 
 
 
-  /* 📄 subtle paper texture */
+  /* paper texture */
   background-image: repeating-linear-gradient(
     0deg,
     rgba(0,0,0,0.03),
@@ -322,7 +365,7 @@ h5 { /*TOP--paper behind*/
   );
 }
 
-h3 { /*BOTTOM--paper behind*/
+h3 { /* BOTTOM- paper behind*/
     y: static;
     x: fixed;
     text-align: center;
@@ -340,21 +383,21 @@ h3 { /*BOTTOM--paper behind*/
 
   padding: 0.3rem 0.8rem;
 
-  /* ✂️ imperfect cut edges */
+  /* cut edges */
   clip-path: polygon(
     3% 0%, 97% 2%, 100% 90%, 95% 100%, 
     5% 98%, 0% 10%
   );
 
-  /* 🌫️ paper shadow (lifted look) */
+  /* paper shadow */
   box-shadow:
     2px 2px 0 rgba(0,0,0,0.25),
     4px 4px 6px rgba(0,0,0,0.2);
 
-  /* 📐 slightly crooked */
+  /* slightly crooked */
   transform: rotate(-3deg);
 
-  /* 📄 subtle paper texture */
+  /* subtle paper texture */
   background-image: repeating-linear-gradient(
     0deg,
     rgba(0,0,0,0.03),
@@ -426,7 +469,7 @@ p {
     white-space: wrap;
     text-align: left;
     margin-bottom: 1rem;
-    font-family:'baskerville old face', serif;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 12pt;
     color: rgb(32, 7, 0);
     
@@ -441,31 +484,28 @@ button {
     text-align: center;
     z-index: 11;
 
-  border: none; /* Optional: removes the default button border */
-  /* Add other styles like color, padding, etc. */
-
+  border: none; 
   display: inline-block;
-
-  background: #f8f1df; /* paper color */
+  background: #f8f1df; 
   color: #2b1a12;
 
   padding: 0.3rem 0.8rem;
 
-  /*  imperfect cut edges */
+  /* cut edges */
   clip-path: polygon(
     20% 0%, 97% 2%, 100% 90%, 95% 80%, 
     5% 98%, 0% 20%
   );
 
-  /* 🌫️ paper shadow (lifted look) */
+  /*  paper shadow */
   box-shadow:
     2px 2px 0 rgba(0,0,0,0.25),
     4px 4px 6px rgba(0,0,0,0.2);
 
-  /* 📐 slightly crooked */
+  /* slightly crooked */
   transform: rotate(-3deg);
 
-  /* 📄 subtle paper texture */
+  /* paper texture */
   background-image: repeating-linear-gradient(
     0deg,
     rgba(0,0,0,0.03),
@@ -479,6 +519,8 @@ button {
     margin-left: 5vw;
 }
 
+
+/*when text is over things*/
 
 .text-overlay {
     position: absolute;
@@ -514,7 +556,6 @@ button {
 
 }
 
-/*home cardboard box text*/
 .text-overlay2 {
     position:sticky;
     bottom: 50rem;
@@ -545,6 +586,17 @@ button {
 }
 
 
+.text-overlay h4::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 3px rgba(0,0,0,0.2);
+  pointer-events: none;
+}
+
+
+
+/* for testiong*/
 
 .bigcontainer {
     width: 100%;
@@ -593,21 +645,12 @@ button {
 /* Position the 5th item to span two columns so it makes a 3-item top row and 2-item bottom row */
 .item:nth-child(5) {
   grid-column: span 2;
-  /* Optional: center the 5th item if you want one item per column in the second row */
   /* grid-column: 2 / 4; */
 }
 
 
 
-/* 🧷 pressed/glued effect */
-.text-overlay h4::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  box-shadow: inset 0 0 3px rgba(0,0,0,0.2);
-  pointer-events: none;
-}
-
+/*on selector page*/
 
 .deco-type {
     width: auto;
@@ -619,15 +662,56 @@ button {
 }
 
 
+
 .grid-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 3 in a row */
-  gap: 10px;
+  gap: 0px;
   padding-top: 15rem;
   overflow-x: wrap;
   grid-auto-rows: 1fr;
   
   
+}
+
+.deco-p2 .item {
+  transition: transform 0.3s ease;
+}
+
+.deco-p2 .item img {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.deco-p2 .item:hover img {
+  transform: scale(1.1);
+  opacity: 0.4;
+}
+
+.deco-p2 .item:hover {
+  transform: scale(1.1);
+}
+
+.item:hover .hover-text {
+  opacity: 1;
+}
+
+.hover-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  color: rgb(0, 0, 0);
+
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 22pt;
+  text-align: center;
+
+  opacity: 0;
+  transition: opacity 0.3s ease;
+
+  z-index: 2;
+  pointer-events: none; 
 }
 
 /* Each item */
@@ -637,15 +721,13 @@ button {
   align-items: center;
  /* border: 4px solid rgb(62, 48, 30);  */
   background-image: url("../deco2/background.jpg");
+  position: relative;
 }
 
-/* Images */
 .item img {
   width: 20rem;
   height: auto;
 }
-
-/* Optional scaling differences */
 
 
 .deco-type1 img {
@@ -660,6 +742,10 @@ button {
 .deco-type3 img {
   transform: scale(fit-content);
 }
+
+
+
+/*test*/
 
 .deco-type1-1 {
     width: auto;
@@ -688,7 +774,7 @@ button {
 
 
 
-/*flickity*/
+/*flickity carousels*/
 
 /* external css: flickity.css */
 
@@ -697,18 +783,17 @@ button {
 
 
 .carousel {
-  position: relative; /* or just delete position */
-
-  width: 45vw;       /* adjust as needed */
+  position: relative;
+  width: 45vw;       
   max-width: 35rem;
 
-  margin: 0;        /* remove margins */
+  margin: 0;        
   height: 100%;
   padding-bottom: 0rem;
 }
 
 .carousel-cell {
-  width: 45vw;          /* each image takes full frame */
+  width: 45vw; 
   height: 45vw;
 
   max-width: 100%;
@@ -726,7 +811,7 @@ button {
   width: auto;
   height: auto;
 
-  object-fit: contain; /* keeps full image visible */
+  object-fit: contain; 
 }
 
 /* cell number */
@@ -743,10 +828,10 @@ button {
 .flickity-page-dots {
   position: absolute !important;
 
-  left: auto !important;   /* 🔥 override Flickity */
+  left: auto !important;   /* override Flickity */
   right: 0px !important;
 
-  width: auto !important;  /* 🔥 stop full-width behavior */
+  width: auto !important;  /* stop full-width behavior */
   text-align: right;       /* align dots inside */
 
   transform: none !important;
@@ -795,13 +880,10 @@ button {
   opacity: 1;
 }
 
-.btn {
-  background-color:blueviolet;
-  border: 1px; /* Optional: removes the default button border */
-  /* Add other styles like color, padding, etc. */
-  
-}
 
+
+
+/*RECIPES*/
 /*trad deco*/
 .mats {
   max-width: 60rem;
@@ -927,6 +1009,8 @@ button {
 
 
 
+
+
 .desc {
     margin-left: 50%;
     margin-right: 5%;
@@ -1010,12 +1094,11 @@ body {
 
 
 
-
 /* BACKGROUNDS
 
 TRAD DECO*/
 
-/* body:not(.deco-home):not(.deco-p2):not(.deco-p3-1):not(.deco-p3-2) {
+/* body:not(.deco-about):not(.deco-p2):not(.deco-p3-1):not(.deco-p3-2) {
     background-image: url('bkgr/oragamipap.jpg');
     
     background-size: cover;
@@ -1031,7 +1114,7 @@ TRAD DECO*/
 }
     
 /*selection*/
- body:not(.deco-home)  /*:not(.deco-p3-0):not(.deco-p3-1):not(.deco-p3-2)*/ {
+ body:not(.deco-about)  /*:not(.deco-p3-0):not(.deco-p3-1):not(.deco-p3-2)*/ {
   background-image: url('bkgr/graphpap.jpg');
   
   /*filter: hue-rotate(30deg);*/
@@ -1050,7 +1133,7 @@ TRAD DECO*/
 }
 
 /*rev deco*/
-  body:not(.deco-home):not(.deco-p2):not(.deco-p3-1):not(.deco-p3-0)::before {
+  body:not(.deco-about):not(.deco-p2):not(.deco-p3-1):not(.deco-p3-0)::before {
   content: "";
   position: fixed;
   inset: 0;
@@ -1067,13 +1150,13 @@ TRAD DECO*/
 
 
  p3, paper tole
-body:not(.deco-home):not(.deco-p2):not(.deco-p3-1):not(.deco-p3-2) {
+body:not(.deco-about):not(.deco-p2):not(.deco-p3-1):not(.deco-p3-2) {
     position: relative;
     background-color: rgb(242, 191, 242);
 }
 
  background layer 
-body:not(.deco-home):not(.deco-p2):not(.deco-p3-0):not(.deco-p3-2)::before {
+body:not(.deco-about):not(.deco-p2):not(.deco-p3-0):not(.deco-p3-2)::before {
     content: "";
     position: fixed;
     inset: 0;
@@ -1091,13 +1174,13 @@ background-image: url("../deco2/bkgr/notebookpap.jpg");
     
 
  p2, selection
-body:not(.deco-home):not(.deco-p2):not(.deco-p3-1):not(.deco-p3-2) {
+body:not(.deco-about):not(.deco-p2):not(.deco-p3-1):not(.deco-p3-2) {
     position: relative;
     background-color: rgb(242, 191, 242);
 }
 
  background layer 
-body:not(.deco-home):not(.deco-p3-1):not(.deco-p3-0):not(.deco-p3-2):before {
+body:not(.deco-about):not(.deco-p3-1):not(.deco-p3-0):not(.deco-p3-2):before {
     content: "";
     position: fixed;
     inset: 0;
@@ -1135,6 +1218,9 @@ body:not(.deco-p2):not(.deco-p3-1):not(.deco-p3-0):not(.deco-p3-2)::before {
     
 }
 
+
+
+/*
 .d2grid {
     display: grid;
     place-items: center;
@@ -1147,14 +1233,3 @@ body:not(.deco-p2):not(.deco-p3-1):not(.deco-p3-0):not(.deco-p3-2)::before {
 
 /* 
 
-
-folders:
-
-1. file.png - this is in the same folder as this file
-2. image/file.png - this is in a folder called "image" that is in the same folder as this file
-3. ../image/file.png - this is a folder one level higher than this file
-
-
-around 500 kb pic??- test- should not take more than a few secs
-check console to see if it's loaded
-*/
